@@ -2,11 +2,16 @@
 
 This is a scaffolding project to get started with C#, NUnit & SnapTest generated code.
 
+### Getting started
+
+Clone this repository.
+Install the snaptest-cli via `npm install -g snaptest-cli`.
+
 ### Generating the SnapTest tests
 
-The easiest way to generate your SnapTest tests is via the extensions by clicking the "generate code" icon ![code](https://res.cloudinary.com/snaptest/image/upload/v1535423547/READMEs/Screen_Shot_2018-08-27_at_9.32.07_PM.png) in your test director and selecting "C# NUnit" from the framework options.
+You will generate the tests via a snaptest CLI command.  The easiest way get the command is via the chrome extension's "generate code" icon ![code](https://res.cloudinary.com/snaptest/image/upload/v1535423547/READMEs/Screen_Shot_2018-08-27_at_9.32.07_PM.png) next to the folder/test you want. 
 
-Example: `snaptest -r csharpnunit -t <your access token> -a <user/project/org> -d <me/userid/projectid>`
+Example CLI command: `snaptest -r csharpnunit -t <your access token> -a <user/project/org> -d <me/userid/projectid>`
 
 For more in-depth options, check out the [snaptest-cli readme](https://www.npmjs.com/package/snaptest-cli).
 
