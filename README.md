@@ -1,15 +1,38 @@
 # SnapTest C# NUnit Harness
 
-## Getting Started
+This is a scaffolding project to get started with C#, NUnit & SnapTest generated code.
 
-1. Run ```dotnet test``` to run all your tests
+### Before you get started
 
-### Options
+1. If you're snaptest tests utilize environments, you'll need to set them up in this project.  Test/Environment data is passed in to the tests using .NETs configuration builder via the SnapTest.cs "glue" file.  It currently
+uses the "In-memory collections" config provider, but can pull data from many sources: [Microsoft.Extensions.Configuration](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.1)  
 
-#### List all available tests:
+1. To run the tests, you'll need a Selenium server running & Chromedriver. 
+
+This project is setup to test in Chrome, so you'll need [chromedriver](http://chromedriver.chromium.org/downloads).  We've included a standalone version of the selenium server in the /selenium 
+folder which you can run via:
+
+`java -jar ./selenium/selenium-server-standalone-3.0.0-beta3.jar`
+
+It's recommended to get a grid server running, ideally via [selenium docker](https://github.com/SeleniumHQ/docker-selenium).  
+
+### SnapConfig.cs
+ 
+This file is required for Snaptest tests to run.  It provides:
+- loading environment/test data configuration into the tests.
+- extending the basic suite/test/action reporting.
+- configuring of the target selenium server, concurrency, and browser type.  
+
+### Getting Started using ".NET test driver" 
+
+Run ```dotnet test``` to run all your tests
+
+#### Options
+
+##### List all available tests:
 ```dotnet test -t```
 
-#### Run a specific test 
+##### Run a specific test 
 ```dotnet test --filter Dialogs```
 
 [More information on running specific tests or folders.](https://docs.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests)
