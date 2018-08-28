@@ -29,9 +29,17 @@ public class SnapConfig {
   }
 
 	public IConfigurationRoot getTestData() {
-		var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json");
-    IConfigurationRoot testData = builder.Build();
+
+		// Add your environment/test data here.
+		var dict = new Dictionary<string, string>
+    {
+	    {"baseUrl", "https://www.snaptest.io"}
+    };
+
+		var testData = new ConfigurationBuilder().AddInMemoryCollection(dict).Build();
+
     return testData;
+
   }
 
   public void StartSuite(String suiteName) {
